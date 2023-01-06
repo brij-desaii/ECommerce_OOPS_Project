@@ -3,6 +3,7 @@ import ecomm.*;
 import demo.*;
 import demo.yukta.*;
 import demo.brij.*;
+import demo.nitz.*;
 import java.io.*;
 
 public class PlatformMain {
@@ -25,10 +26,8 @@ public class PlatformMain {
 		Seller s2 = new Seller67("brij");
 		s2.addPlatform(pf);
 		
-		/*
-		Seller s3 = new SellerXYZ2("Seller3");
-		s1.addPlatform(pf);
- 		*/
+		Seller s3 = new Seller508("nitheez");
+		s3.addPlatform(pf);
 		
 		/*
 		// keep reading from System.in
@@ -36,6 +35,7 @@ public class PlatformMain {
 		// invoke 
 			pf.processRequests();
 		*/
+		
 		Scanner scanner = new Scanner(System.in);
 		String input;
 		while (true)
