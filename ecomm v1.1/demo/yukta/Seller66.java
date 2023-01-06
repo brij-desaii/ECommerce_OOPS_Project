@@ -41,16 +41,18 @@ public class Seller66 extends Seller {
 
     public boolean buyProduct(String productID, int quantity) {
         for (int i = 0; i < myBooks.size(); i++) {
-            if (myBooks.get(i).getProductID() == productID && myBooks.get(i).getQuantity() >= quantity) 
+            if (myBooks.get(i).getProductID().equals(productID) && myBooks.get(i).getQuantity() >= quantity) 
             {
                 //myBooks.get(i).decreaseQty(quantity);
+                System.out.println("true in seller");
                 return true;
             }
         }
         for (int i = 0; i < myMobiles.size(); i++) {
-            if (myMobiles.get(i).getProductID() == productID && myMobiles.get(i).getQuantity() >= quantity) 
+            if (myMobiles.get(i).getProductID().equals(productID) && myMobiles.get(i).getQuantity() >= quantity) 
             {
                 //myMobiles.get(i).decreaseQty(quantity);
+                System.out.println("true in seller");
                 return true;
             }
         }
