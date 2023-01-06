@@ -3,7 +3,7 @@ package demo;
 import ecomm.*;
 import ecomm.Globals.Category;
 
-public class Book extends Product {
+public class Book extends myProduct {
     private String name;
     private int quantity;
     private float price;
@@ -17,7 +17,7 @@ public class Book extends Product {
         this.quantity = quantity;
     }
 
-    public Globals.Category getCategory() {
+    public Globals.Category getCategory() { //getters
         return Category.Book;
     }
 

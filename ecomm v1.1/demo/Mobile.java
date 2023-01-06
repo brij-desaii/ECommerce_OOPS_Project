@@ -3,7 +3,7 @@ package demo;
 import ecomm.*;
 import ecomm.Globals.Category;
 
-public class Mobile extends Product
+public class Mobile extends myProduct
 {
     private String name, ProductID;
     private int quantity;
@@ -16,7 +16,7 @@ public class Mobile extends Product
         this.quantity = quantity;
         this.ProductID = ProductID;
     }
-    public Globals.Category getCategory()
+    public Globals.Category getCategory()   //getters
     {
         return Category.Mobile;
     }
@@ -37,7 +37,7 @@ public class Mobile extends Product
     {
         return quantity;
     }
-    public void decreaseQty(Integer qty){
+    public void decreaseQty(int qty){
         this.quantity -= qty;
     }
 }
