@@ -105,10 +105,10 @@ void DemoPortal ::checkResponse()
 	{
 		// cout<<"fffffff";
 		ofstream file("../ecomm v1.1/PlatformToPortal.txt");
-	file.close();
+		file.close();
 		return;
 	}
-
+	int ctrl = 0;
 	while (1)
 	{
 		if (cmds[ccmd].second != "NotSort")
@@ -124,6 +124,7 @@ void DemoPortal ::checkResponse()
 			{
 				ofstream file("../ecomm v1.1/PlatformToPortal.txt");
 	file.close();
+
 				// cout<<"iusbvuijonhiugy";
 				return;
 			}
@@ -146,6 +147,8 @@ void DemoPortal ::checkResponse()
 				}
 				if (!getline(ftl, cmd))
 				{
+					ctrl = 1;
+
 					break;
 				}
 			}
@@ -168,9 +171,11 @@ void DemoPortal ::checkResponse()
 				return stoi(a[4]) < stoi(b[4]);
 			});*/
 			}
-			// cout<<lisst.size();
+			// cout << lisst.size() << "hi" << endl;
+
 			for (int i = 0; i < lisst.size(); i++)
 			{
+				// cout << lisst[i].size() << "bye" << endl;
 				for (int j = 0; j < lisst[i].size(); j++)
 					cout << lisst[i][j] << " ";
 				cout << endl;
@@ -182,6 +187,12 @@ void DemoPortal ::checkResponse()
 			}
 			*/
 			ccmd++;
+			if (ctrl == 1)
+			{
+				ofstream file("../ecomm v1.1/PlatformToPortal.txt");
+				file.close();
+				return;
+			}
 		}
 		else
 		{
@@ -191,7 +202,8 @@ void DemoPortal ::checkResponse()
 			if (!getline(ftl, cmd))
 			{
 				ofstream file("../ecomm v1.1/PlatformToPortal.txt");
-	file.close();
+				file.close();
+
 				return;
 			}
 			// cout<<cmd;
