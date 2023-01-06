@@ -1,3 +1,4 @@
+//Import Zone 
 #include <iostream>
 #include <complex>
 #include <queue>
@@ -23,11 +24,14 @@
 using namespace std;
 int main()
 {
+    //Creating instance of DemoPortal
     DemoPortal *mydp = new DemoPortal();
+    //Terminal Inputs accepted until keyboard inturupt
     while (1)
     {
         string cmd;
         getline(cin, cmd);
+        //Appropriate function call
         if (cmd == "Check")
         {
             mydp->checkResponse();

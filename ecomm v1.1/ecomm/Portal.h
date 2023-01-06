@@ -1,3 +1,4 @@
+//Imports zone
 #ifndef PORTAL_H
 #define PORTAL_H
 #include <iostream> 
@@ -20,6 +21,7 @@
 #include <fstream>
 using namespace std;
 
+//Parent Virtual class, all methods to be overriden by child classes
 class Portal
 {
 public:
