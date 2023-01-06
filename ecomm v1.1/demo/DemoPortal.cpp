@@ -118,12 +118,13 @@ void DemoPortal ::checkResponse()
 			std::istream_iterator<std::string> begin(ss);
 			std::istream_iterator<std::string> end;
 			std::vector<std::string> vstrings(begin, end);
-			vector<vector<std::string>> lisst;
+			vector<vector<std::string> > lisst;
 			lisst.push_back(vstrings);
 			if (!getline(ftl, cmd))
 			{
 				ofstream file("../ecomm v1.1/PlatformToPortal.txt");
-				file.close();
+	file.close();
+
 				// cout<<"iusbvuijonhiugy";
 				return;
 			}
@@ -202,6 +203,7 @@ void DemoPortal ::checkResponse()
 			{
 				ofstream file("../ecomm v1.1/PlatformToPortal.txt");
 				file.close();
+
 				return;
 			}
 			// cout<<cmd;

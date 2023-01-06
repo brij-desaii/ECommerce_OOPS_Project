@@ -26,7 +26,7 @@ class DemoPortal : public Portal
 private:
     static int nextportalID;
     int portalID;
-    vector<pair<string, string>> cmds;
+    vector<pair<string, string> > cmds;
     int ccmd;
 
 public:
