@@ -98,12 +98,14 @@ void DemoPortal ::processUserCommand(string command)
 }
 void DemoPortal ::checkResponse()
 {
-	ifstream ftl("../ecomm v1.1/PlatformToPortal.txt");
+	fstream ftl("../ecomm v1.1/PlatformToPortal.txt");
 	string cmd;
 	// Use a while loop together with the getline() function to read the file line by line
 	if (!getline(ftl, cmd))
 	{
 		// cout<<"fffffff";
+		ofstream file("../ecomm v1.1/PlatformToPortal.txt");
+	file.close();
 		return;
 	}
 
@@ -116,10 +118,12 @@ void DemoPortal ::checkResponse()
 			std::istream_iterator<std::string> begin(ss);
 			std::istream_iterator<std::string> end;
 			std::vector<std::string> vstrings(begin, end);
-			vector<vector<std::string>> lisst;
+			vector<vector<std::string> > lisst;
 			lisst.push_back(vstrings);
 			if (!getline(ftl, cmd))
 			{
+				ofstream file("../ecomm v1.1/PlatformToPortal.txt");
+	file.close();
 				// cout<<"iusbvuijonhiugy";
 				return;
 			}
@@ -186,12 +190,15 @@ void DemoPortal ::checkResponse()
 			// cout<<"jknjkn";
 			if (!getline(ftl, cmd))
 			{
+				ofstream file("../ecomm v1.1/PlatformToPortal.txt");
+	file.close();
 				return;
 			}
 			// cout<<cmd;
 		}
 		// Close the file
 	}
-	ftl.clear();
+	ofstream file("../ecomm v1.1/PlatformToPortal.txt");
+	file.close();
 	ftl.close();
 }
