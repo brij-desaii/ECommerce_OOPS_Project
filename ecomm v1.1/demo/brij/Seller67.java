@@ -46,14 +46,15 @@ public class Seller67 extends Seller {
 
     public boolean buyProduct(String productID, int quantity) {
         for (int i = 0; i < booksList.size(); i++) {
-            if (booksList.get(i).getProductID() == productID && booksList.get(i).getQuantity() >= quantity) 
+            if (booksList.get(i).getProductID().equals(productID) && booksList.get(i).getQuantity() >= quantity) 
             {
                 //booksList.get(i).decreaseQty(quantity);
+                //System.out.println(booksList.get(i).getProductID());
                 return true;
             }
         }
         for (int i = 0; i < mobilesList.size(); i++) {
-            if (mobilesList.get(i).getProductID() == productID && mobilesList.get(i).getQuantity() >= quantity) 
+            if (mobilesList.get(i).getProductID().equals(productID) && mobilesList.get(i).getQuantity() >= quantity) 
             {
                 //mobilesList.get(i).decreaseQty(quantity);
                 return true;

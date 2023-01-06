@@ -24,9 +24,9 @@ public class DemoPlatform extends Platform {
 		// TODO Auto-generated method stub
 		try
 		{
-		File obj = new File(Globals.toPlatform);
+		File inputFile = new File(Globals.toPlatform);
 		File outputFile = new File(Globals.fromPlatform);
-		Scanner reader = new Scanner(obj);
+		Scanner reader = new Scanner(inputFile);
 	
 
 		ArrayList<ArrayList<String>> dataLines = new ArrayList<ArrayList<String>>();
@@ -42,12 +42,12 @@ public class DemoPlatform extends Platform {
 		}
 		//clear the file after reading
 		
-		//System.out.println(dataLines);
+		System.out.println(dataLines);
 		
 		reader.close();
 		try 
 		{
-			FileWriter myWriter = new FileWriter(obj, false);	//switch file names w dumb global
+			FileWriter myWriter = new FileWriter(inputFile, false);	//switch file names w dumb global
 			myWriter.close();
 			//System.out.println("Successfully wrote to the file.");
 		} 
@@ -126,19 +126,25 @@ public class DemoPlatform extends Platform {
 				FileWriter myWriter = new FileWriter(outputFile, true);
 
 				String UniqueProductName = dataLines.get(i).get(3);
+				System.out.println(UniqueProductName);
 				Integer quantity = Integer.parseInt(dataLines.get(i).get(4));
-				boolean valid;
+				boolean valid = false;
 				
 				for(int s = 0; s < sellerList.size(); s++)
 				{
+					System.out.println("entered loop");
 					valid = sellerList.get(s).buyProduct(UniqueProductName, quantity);
-					if(valid == true)
+					if(valid)
 					{
+						System.out.println("wtfff");
 						myWriter.write(portalID + " " + requestID + " " + "Success" + "\n");
-						return;
+						break;
 					}
+					System.out.println("in loop" + valid);
 				}
-				myWriter.write(portalID + " " + requestID + " " + "Failure" + "\n");
+				if(!valid){
+					myWriter.write(portalID + " " + requestID + " " + "Failure" + "\n");
+				}
 				myWriter.close();
 				System.out.println("Successfully wrote to the file.");
 				}

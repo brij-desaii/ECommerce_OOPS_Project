@@ -80,11 +80,11 @@ void DemoPortal ::processUserCommand(string command)
 	{
 		string item;
 		int num;
-		for (int i = 5; i < command.length(); i++)
+		for (int i = 4; i < command.length(); i++)
 		{
 			if (command[i] == ' ')
 			{
-				num = int(command[i + 1]) - 21;
+				num = stoi(command.substr(i + 1));
 				break;
 			}
 			item.push_back(command[i]);
