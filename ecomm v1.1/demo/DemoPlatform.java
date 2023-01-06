@@ -40,8 +40,22 @@ public class DemoPlatform extends Platform {
 			ArrayList<String> dataArr = new ArrayList<String>(Arrays.asList(tmp));
 			dataLines.add(dataArr);
 		}
-		System.out.println(dataLines);
+		//clear the file after reading
+		
+		//System.out.println(dataLines);
+		
 		reader.close();
+		try 
+		{
+			FileWriter myWriter = new FileWriter(obj, false);	//switch file names w dumb global
+			myWriter.close();
+			//System.out.println("Successfully wrote to the file.");
+		} 
+		catch (IOException e) 
+		{
+			System.out.println("An error occurred.");
+		}
+		//new FileWriter(outputFile, false).close();
 
 		for(int i = 0; i < dataLines.size(); i++)
 		{
@@ -134,7 +148,6 @@ public class DemoPlatform extends Platform {
 				}
 			}
 		}
-
 		}
 		catch(FileNotFoundException ex)
 		{
